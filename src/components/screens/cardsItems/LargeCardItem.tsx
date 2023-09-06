@@ -1,8 +1,8 @@
-import React from 'react';
 import Image from "next/image";
+import { ICardDataSingleLarge } from '@/interfaces/cardLarge.intesfaces';
 
 
-export default function LargeCardItem() {
+export default function LargeCardItem(props: ICardDataSingleLarge) {
     return (
         <div className=' h-auto relative'>
             <div className='absolute  flex flex-col w-full inset-x-0 bottom-0 ml-3'>

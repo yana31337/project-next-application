@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Layout from '@/components/layout/Layout'
@@ -8,10 +7,11 @@ import Travel from '../homeItems/Travel'
 import Pictures from '../homeItems/Pictures'
 import Mission from '../homeItems/Mission'
 import SingUp from '../homeItems/SingUp'
+import { CardData } from '@/pages'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(props: CardData  ) {
     return (
         <>
             <Head>
@@ -22,7 +22,7 @@ export default function Home() {
             </Head>
             <Layout>
                 <main className=" max-h-max mx-auto">
-                    <LatestStories />
+                    <LatestStories card={props.card}/>
                     <Movies />
                     <Travel />
                     <Pictures />

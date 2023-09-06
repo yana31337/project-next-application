@@ -1,6 +1,7 @@
+import { ICardDataSingleMedium } from "@/interfaces/cardMedium.intesfaces"
 import { FC } from "react"
 
-const MediumCardItem: FC<any> = () => {
+const MediumCardItem: FC<ICardDataSingleMedium> = (props:ICardDataSingleMedium) => {
     return (
         <div className='w-80 text-black md:w-72'>
             <div className='h-auto relative'>

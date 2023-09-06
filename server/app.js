@@ -8,7 +8,7 @@ const port = 7000;
 
 const data = {
     "cards": {
-        "small": [
+        "smallcard": [
             {
                 "id": 1,
                 "title": "Culture",
@@ -40,7 +40,7 @@ const data = {
                 "image": "https://i.natgeofe.com/n/49281e7b-2820-45f5-9142-a30a6741d960/MM9809_211022_01752_square.jpg?w=390&h=390"
             }
         ],
-        "medium": [
+        "mediumcard": [
             {
                 "id": 1,
                 "title": "Animals",
@@ -66,7 +66,7 @@ const data = {
                 "image": "https://i.natgeofe.com/n/e68703b2-557c-4b89-bcf0-4568c29ec8e8/LindbladAA424_4x3.jpg?w=620&h=466"
             }
         ],
-        "large": [
+        "largecard": [
             {
                 "id": 1,
                 "title": "History & Culture",
@@ -82,9 +82,6 @@ const data = {
         ]
     }
 }
-
-export default data;
-
 
 app.use(express.json());
 
