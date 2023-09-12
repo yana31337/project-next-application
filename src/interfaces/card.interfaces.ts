@@ -7,8 +7,8 @@ export interface ICard {
 }
 
 export interface ICardData {
-    [x: string]: any
-    card: ICard[]
+
+    card: ICard[],
     mediumcard:  ICard[],
     smallcard: ICard[],
     largecard:  ICard[]

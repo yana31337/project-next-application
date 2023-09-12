@@ -8,10 +8,11 @@ import Pictures from '../homeItems/Pictures'
 import Mission from '../homeItems/Mission'
 import SingUp from '../homeItems/SingUp'
 import { CardData } from '@/pages'
+import { FC } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home(props: CardData  ) {
+const Home: FC<CardData> = ({card}) => {
     return (
         <>
             <Head>
@@ -22,7 +23,7 @@ export default function Home(props: CardData  ) {
             </Head>
             <Layout>
                 <main className=" max-h-max mx-auto">
-                    <LatestStories card={props.card}/>
+                    <LatestStories card={card} />
                     <Movies />
                     <Travel />
                     <Pictures />
@@ -33,3 +34,5 @@ export default function Home(props: CardData  ) {
         </>
     )
 }
+
+export default Home;

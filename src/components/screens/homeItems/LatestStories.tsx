@@ -5,7 +5,7 @@ import LargeCardItem from '../cardsItems/LargeCardItem';
 import { CardData } from '@/pages';
 import { ICard } from '@/interfaces/card.interfaces';
 
-const LatestStories: FC<CardData> = (props: CardData) => {
+const LatestStories: FC<CardData> = ({card}) => {
     return (
         <div className='bg-black w-screen'>
 
@@ -30,7 +30,7 @@ const LatestStories: FC<CardData> = (props: CardData) => {
                     </div>
 
                     <div>
-                        {props.card.cards.smallcard.map((card: ICard) => <SmallCardItem key={card.id} card={card} />)}
+                        {card.cards.smallcard.map((card: ICard) => <SmallCardItem key={card.id} card={card} />)}
                     </div>
 
                     <div>
@@ -41,11 +41,11 @@ const LatestStories: FC<CardData> = (props: CardData) => {
 
                 <div className='col-span-8 '>
 
-                    <LargeCardItem largecard={props.card.cards.largecard[0]} />
+                   <LargeCardItem largecard={card.cards.largecard[0]} />
 
                     <div className='flex flex-row justify-between h-1/2 mt-10'>
-                        <MediumCardItem mediumcard={props.card.cards.mediumcard[0]} />
-                        <MediumCardItem mediumcard={props.card.cards.mediumcard[1]} />
+                        <MediumCardItem mediumcard={card.cards.mediumcard[0]} />
+                        <MediumCardItem mediumcard={card.cards.mediumcard[1]} />
 
                     </div>
 

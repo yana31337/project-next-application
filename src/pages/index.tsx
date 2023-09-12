@@ -17,9 +17,9 @@ export type CardData = {
   card: ICard[]
 }
 
-export default function PageHome(props: ICardData) {
+export default function PageHome({cards}) {
   return (
-    <Home card={props.cards}/>
+    <Home card={cards} />
   )
 }
 
