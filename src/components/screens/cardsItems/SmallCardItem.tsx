@@ -14,7 +14,7 @@ const SmallCardItem: FC<ICardDataSingle> = ({ card }) => {
      <Image src={card.image} alt="" width={96} height={96} className='mr-5' />
       <div>
         <Link href="#" className=''>
-          <div className='tracking-wider text-sm pb-1'>title</div>
+          <div className='tracking-wider text-sm pb-1'>{card.title}</div>
           <div className=' text-base tracking-wide hover:underline'>description</div>
         </Link>
       </div>

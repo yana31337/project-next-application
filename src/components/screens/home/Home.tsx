@@ -9,10 +9,11 @@ import Mission from '../homeItems/Mission'
 import SingUp from '../homeItems/SingUp'
 import { CardData } from '@/pages'
 import { FC } from 'react'
+import { ICard, ICardData } from '@/interfaces/card.interfaces'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Home: FC<CardData> = ({card}) => {
+const Home: FC<CardData> = (card: ICardData) => {
     return (
         <>
             <Head>

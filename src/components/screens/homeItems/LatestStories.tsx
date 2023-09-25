@@ -3,9 +3,9 @@ import SmallCardItem from '../cardsItems/SmallCardItem';
 import MediumCardItem from '../cardsItems/MediumCardItem';
 import LargeCardItem from '../cardsItems/LargeCardItem';
 import { CardData } from '@/pages';
-import { ICard } from '@/interfaces/card.interfaces';
+import { ICard, ICardData } from '@/interfaces/card.interfaces';
 
-const LatestStories: FC<CardData> = ({card}) => {
+const LatestStories: FC<CardData> = (card: ICardData) => {
     return (
         <div className='bg-black w-screen'>
 
@@ -30,7 +30,8 @@ const LatestStories: FC<CardData> = ({card}) => {
                     </div>
 
                     <div>
-                        {card.cards.smallcard.map((card: ICard) => <SmallCardItem key={card.id} card={card} />)}
+                        {card.smallcard.map((card: ICard)=> <SmallCardItem key={card.id} card={card} />)}
+                        {/* {card.smallcard.map((card: ICard) => <SmallCardItem key={card.id} card={card} />)} */}
                     </div>
 
                     <div>
@@ -41,11 +42,11 @@ const LatestStories: FC<CardData> = ({card}) => {
 
                 <div className='col-span-8 '>
 
-                   <LargeCardItem largecard={card.cards.largecard[0]} />
+                   <LargeCardItem largecard={card.largecard[0]} />
 
                     <div className='flex flex-row justify-between h-1/2 mt-10'>
-                        <MediumCardItem mediumcard={card.cards.mediumcard[0]} />
-                        <MediumCardItem mediumcard={card.cards.mediumcard[1]} />
+                        <MediumCardItem mediumcard={card.mediumcard[0]} />
+                        <MediumCardItem mediumcard={card.mediumcard[1]} />
 
                     </div>
 

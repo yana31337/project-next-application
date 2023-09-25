@@ -17,13 +17,13 @@ export type CardData = {
   card: ICard[]
 }
 
-export default function PageHome({cards}) {
+export default function PageHome(cards: ICard[]) {
   return (
     <Home card={cards} />
   )
 }
 
-export const getStaticProps: GetStaticProps<ICardData> = async () => {
+export const getStaticProps: GetStaticProps<CardData> = async () => {
   const cards = await CardService.getAllSmall()
   return {
     props: {
