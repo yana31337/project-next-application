@@ -7,13 +7,13 @@ import Travel from '../homeItems/Travel'
 import Pictures from '../homeItems/Pictures'
 import Mission from '../homeItems/Mission'
 import SingUp from '../homeItems/SingUp'
-import { CardData } from '@/pages'
+import { CardsData } from '@/pages'
 import { FC } from 'react'
 import { ICard, ICardData } from '@/interfaces/card.interfaces'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Home: FC<CardData> = (card: ICardData) => {
+const Home: FC<CardsData> = (cards: CardsData) => {
     return (
         <>
             <Head>
@@ -24,9 +24,9 @@ const Home: FC<CardData> = (card: ICardData) => {
             </Head>
             <Layout>
                 <main className=" max-h-max mx-auto">
-                    <LatestStories card={card} />
+                    <LatestStories {...cards} />
                     <Movies />
-                    <Travel />
+                    <Travel {...cards} />
                     <Pictures />
                     <Mission />
                     <SingUp />

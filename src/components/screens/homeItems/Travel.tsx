@@ -4,13 +4,15 @@ import Image from "next/image"
 import LargeCardItem from "../cardsItems/LargeCardItem"
 import MediumCardItem from "../cardsItems/MediumCardItem"
 import SmallCardItem from "../cardsItems/SmallCardItem"
+import { CardsData } from "@/pages"
+import { ICard } from "@/interfaces/card.interfaces"
 
 
-const Travel: FC<any> = () => {
+const Travel: FC = ({cards} : {cards: CardsData}) => {
     return (
         <div className='bg-black '>
 
-            <div className=' text-white pb-10 relative  h-auto mx-auto'>
+            <div className=' text-white pb-10 relative  h-auto ml-auto'>
 
                 <div className='absolute grid grid-cols-12 gap-x-10 col-start-auto max-w-5xl text-white pb-14  ml-52'>
 
@@ -22,11 +24,11 @@ const Travel: FC<any> = () => {
 
                     <div className='col-span-8'>
 
-                        <LargeCardItem />
+                        <LargeCardItem largecard={cards.largecard[1]} />
 
                         <div className='flex flex-row justify-between mt-10'>
-                            <MediumCardItem />
-                            <MediumCardItem />
+                        <MediumCardItem mediumcard={cards.mediumcard[2]} />
+                        <MediumCardItem mediumcard={cards.mediumcard[3]} />
                         </div>
 
                     </div>
@@ -39,12 +41,8 @@ const Travel: FC<any> = () => {
                         </div>
 
                         <div >
-                            <SmallCardItem />
-                            <SmallCardItem />
-                            <SmallCardItem />
-                            <SmallCardItem />
-                            <SmallCardItem />
-                            <SmallCardItem />
+                        {cards.smallcard.map((card: ICard)=> <SmallCardItem key={card.id} card={card}/>)}
+                      
                         </div>
 
                         <div className=''>

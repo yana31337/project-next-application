@@ -2,10 +2,10 @@ import React, { FC } from 'react'
 import SmallCardItem from '../cardsItems/SmallCardItem';
 import MediumCardItem from '../cardsItems/MediumCardItem';
 import LargeCardItem from '../cardsItems/LargeCardItem';
-import { CardData } from '@/pages';
+import { CardsData } from '@/pages';
 import { ICard, ICardData } from '@/interfaces/card.interfaces';
 
-const LatestStories: FC<CardData> = (card: ICardData) => {
+const LatestStories: FC = ({ cards }: {cards: CardsData}) => {
     return (
         <div className='bg-black w-screen'>
 
@@ -30,8 +30,8 @@ const LatestStories: FC<CardData> = (card: ICardData) => {
                     </div>
 
                     <div>
-                        {card.smallcard.map((card: ICard)=> <SmallCardItem key={card.id} card={card} />)}
-                        {/* {card.smallcard.map((card: ICard) => <SmallCardItem key={card.id} card={card} />)} */}
+                        {cards.smallcard.map((card: ICard)=> <SmallCardItem key={card.id} card={card} />)}
+                
                     </div>
 
                     <div>
@@ -41,12 +41,11 @@ const LatestStories: FC<CardData> = (card: ICardData) => {
                 </div>
 
                 <div className='col-span-8 '>
-
-                   <LargeCardItem largecard={card.largecard[0]} />
+                   <LargeCardItem largecard={cards.largecard[0]} />
 
                     <div className='flex flex-row justify-between h-1/2 mt-10'>
-                        <MediumCardItem mediumcard={card.mediumcard[0]} />
-                        <MediumCardItem mediumcard={card.mediumcard[1]} />
+                        <MediumCardItem mediumcard={cards.mediumcard[0]} />
+                        <MediumCardItem mediumcard={cards.mediumcard[1]} />
 
                     </div>
 

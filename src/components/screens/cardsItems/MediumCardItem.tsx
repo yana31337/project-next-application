@@ -1,4 +1,5 @@
 import { ICardDataSingleMedium } from "@/interfaces/cardMedium.intesfaces"
+import Link from "next/link"
 import { FC } from "react"
 
 const MediumCardItem: FC<ICardDataSingleMedium> = (props:ICardDataSingleMedium) => {
@@ -7,10 +8,10 @@ const MediumCardItem: FC<ICardDataSingleMedium> = (props:ICardDataSingleMedium) 
             <div className='h-auto relative'>
                 <div className='absolute flex flex-col w-full inset-x-0 bottom-0 pl-3  bg-white   '>
                     <div className=''>
-                        <a href="#" className='mr-5  text-xs uppercase'> title</a>
+                        <Link href={`/card/${props.mediumcard.id}`} className='mr-5  text-xs uppercase'>{props.mediumcard.title}</Link>
                     </div>
 
-                    <a href="#" className=' text-xl font-medium font-sans '> description </a>
+                    <a href="#" className=' text-xl font-medium font-sans '> {props.mediumcard.description} </a>
                     <div className='flex flex-row mb-2'>
                         <img src='../svg/menuBlack.svg' alt="" className='w-4 h-4 aling-center' />
                         <a href="" className='uppercase ml-2 text-xs'>Read</a>

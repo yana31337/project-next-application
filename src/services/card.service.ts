@@ -1,5 +1,5 @@
-import { ICard, ICardData } from "@/interfaces/card.interfaces"
-import { CardData } from "@/pages"
+import { ICard, ICardData, ICardsData } from "@/interfaces/card.interfaces"
+import { CardsData } from "@/pages"
 import axios from "axios"
 
 const API_URL = 'http://localhost:7000'
@@ -7,22 +7,15 @@ const API_URL = 'http://localhost:7000'
 axios.defaults.baseURL = API_URL
 
 export const CardService = {
-    async getAllSmall() {
-        const { data } = await axios.get<CardData[]>('/cards')
-        console.log(data)
-        return data
+    async getAll() {
+        const { data } = await axios.get<ICardsData>('/cards')
+        return data.cards
     },
 
-    async getByIdSmall(id: string) {
-        const { data } = await axios.get<ICard>('/cards/:cardId', {
-            
-            params: {
-                id
-            },
-        })
-       
-
-        return data[0]
+    async getById(id: string) {
+        const uri = `/cards/${id}`
+        const { data } = await axios.get<ICard>(uri)
+        return data
     },
 }
 
